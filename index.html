@@ -20,21 +20,24 @@
 	#maintable td {
 		border-style: solid;
 		border-width: 10px;
-		border-color: #gray;
-		background-color: gray;
+		border-color: #666;
+		background-color: #666;
 	}
 	
 	td {
 		vertical-align: top;
 	}
+	
+	#droppable.hover {
+		background-color: #777;
+	}
 
-	.category_name {
+	.category_name input {
 		width: 120px;
 		background: transparent;
 		border: 0;
 		font-size: 1.1em;
 		font-weight: bold;
-		margin-bottom: 6px;
 		margin-left: 4px;
 	}
 
@@ -43,8 +46,17 @@
 	<script>
 	$(function() {
 		$(".connectedSortable").sortable({
+			items: "li:not(.category_name)",
 			connectWith: ".connectedSortable"
 		}); //.disableSelection();
+
+		$("#droppable").droppable({
+			activeClass: "hover",
+			drop: function( event, ui ) {
+				
+			}
+		});
+		
 	});
 	</script>
 </head>
@@ -69,10 +81,10 @@
 					
 	</ul>
 </td>
-<td>
+<td id="droppable">
 	
 		<ul id="sortable2" class="connectedSortable">
-			<input type="text" value="Column 1" class="category_name" />
+			<li class="category_name"><input type="text" value="Column 1" /></li>
 			<li class="ui-state-highlight">Item 1</li>
 			<li class="ui-state-highlight">Item 2</li>
 			<li class="ui-state-highlight">Item 3</li>
@@ -85,7 +97,7 @@
 		
 		
 		<ul id="sortable3" class="connectedSortable">
-			<input type="text" value="Column 1" class="category_name" />
+			<li class="category_name"><input type="text" value="Column 1" /></li>
 			<li class="ui-state-highlight">Item 1</li>
 			<li class="ui-state-highlight">Item 2</li>
 			<li class="ui-state-highlight">Item 3</li>
@@ -97,7 +109,7 @@
 		</ul>
 		
 		<ul id="sortable4" class="connectedSortable">
-			<input type="text" value="Column 1" class="category_name" />
+			<li class="category_name"><input type="text" value="Column 1" /></li>
 			<li class="ui-state-highlight">Item 1</li>
 			<li class="ui-state-highlight">Item 2</li>
 			<li class="ui-state-highlight">Item 3</li>
@@ -109,7 +121,7 @@
 		</ul>
 	
 		<ul id="sortable5" class="connectedSortable">
-			<input type="text" value="Column 1" class="category_name" />
+			<li class="category_name"><input type="text" value="Column 1" /></li>
 			<li class="ui-state-highlight">Item 1</li>
 			<li class="ui-state-highlight">Item 2</li>
 			<li class="ui-state-highlight">Item 3</li>
@@ -121,7 +133,7 @@
 		</ul>
 		
 		<ul id="sortable6" class="connectedSortable">
-			<input type="text" value="Column 1" class="category_name" />
+			<li class="category_name"><input type="text" value="Column 1" /></li>
 			<li class="ui-state-highlight">Item 1</li>
 			<li class="ui-state-highlight">Item 2</li>
 			<li class="ui-state-highlight">Item 3</li>
