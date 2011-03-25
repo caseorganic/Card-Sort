@@ -12,8 +12,12 @@
 	<style>
 	.connectedSortable { list-style-type: none; margin: 0; padding: 0; float: left; margin-right: 10px; }
 	.connectedSortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+
+	#maintable {
+		width: 100%;
+	}
 	
-	#mybox{
+	#maintable td {
 		border-style: solid;
 		border-width: 10px;
 		border-color: #gray;
@@ -25,6 +29,7 @@
 	}
 
 	.category_name {
+		width: 120px;
 		background: transparent;
 		border: 0;
 		font-size: 1.1em;
@@ -42,7 +47,6 @@
 		}); //.disableSelection();
 	});
 	</script>
-
 </head>
 
 <body>
@@ -50,8 +54,8 @@
 
 <div class="demo">
 
-<table><tr>
-<td id="mybox">
+<table id="maintable"><tr>
+<td width="160">
 	<ul id="sortable1" class="connectedSortable">
 	Cards
 		<li class="ui-state-default">Item 1</li>
@@ -65,7 +69,7 @@
 					
 	</ul>
 </td>
-<td id="mybox">
+<td>
 	
 		<ul id="sortable2" class="connectedSortable">
 			<input type="text" value="Column 1" class="category_name" />
