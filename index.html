@@ -1,0 +1,149 @@
+<html>
+	
+<head>
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" type="text/css" media="all" /> 	
+	<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" /> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/i18n/jquery-ui-i18n.min.js" type="text/javascript"></script>
+		
+	<style>
+	.connectedSortable { list-style-type: none; margin: 0; padding: 0; float: left; margin-right: 10px; }
+	.connectedSortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+	
+	#mybox{
+		border-style: solid;
+		border-width: 10px;
+		border-color: #gray;
+		background-color: gray;
+	}
+	
+	td {
+		vertical-align: top;
+	}
+
+	.category_name {
+		background: transparent;
+		border: 0;
+		font-size: 1.1em;
+		font-weight: bold;
+		margin-bottom: 6px;
+		margin-left: 4px;
+	}
+
+	</style>
+	
+	<script>
+	$(function() {
+		$(".connectedSortable").sortable({
+			connectWith: ".connectedSortable"
+		}); //.disableSelection();
+	});
+	</script>
+
+</head>
+
+<body>
+
+
+<div class="demo">
+
+<table><tr>
+<td id="mybox">
+	<ul id="sortable1" class="connectedSortable">
+	Cards
+		<li class="ui-state-default">Item 1</li>
+		<li class="ui-state-default">Item 2</li>
+		<li class="ui-state-default">Item 3</li>
+		<li class="ui-state-default">Item 4</li>
+		<li class="ui-state-default">Item 5</li>
+		<li class="ui-state-default">Item 6</li>
+		<li class="ui-state-default">Item 7</li>
+		<li class="ui-state-default">Item 8</li>
+					
+	</ul>
+</td>
+<td id="mybox">
+	
+		<ul id="sortable2" class="connectedSortable">
+			<input type="text" value="Column 1" class="category_name" />
+			<li class="ui-state-highlight">Item 1</li>
+			<li class="ui-state-highlight">Item 2</li>
+			<li class="ui-state-highlight">Item 3</li>
+			<li class="ui-state-highlight">Item 4</li>
+			<li class="ui-state-highlight">Item 5</li>
+			<li class="ui-state-highlight">Item 6</li>
+			<li class="ui-state-highlight">Item 7</li>
+			<li class="ui-state-highlight">Item 8</li>
+		</ul>
+		
+		
+		<ul id="sortable3" class="connectedSortable">
+			<input type="text" value="Column 1" class="category_name" />
+			<li class="ui-state-highlight">Item 1</li>
+			<li class="ui-state-highlight">Item 2</li>
+			<li class="ui-state-highlight">Item 3</li>
+			<li class="ui-state-highlight">Item 4</li>
+			<li class="ui-state-highlight">Item 5</li>
+			<li class="ui-state-highlight">Item 6</li>
+			<li class="ui-state-highlight">Item 7</li>
+			<li class="ui-state-highlight">Item 8</li>
+		</ul>
+		
+		<ul id="sortable4" class="connectedSortable">
+			<input type="text" value="Column 1" class="category_name" />
+			<li class="ui-state-highlight">Item 1</li>
+			<li class="ui-state-highlight">Item 2</li>
+			<li class="ui-state-highlight">Item 3</li>
+			<li class="ui-state-highlight">Item 4</li>
+			<li class="ui-state-highlight">Item 5</li>
+			<li class="ui-state-highlight">Item 6</li>
+			<li class="ui-state-highlight">Item 7</li>
+			<li class="ui-state-highlight">Item 8</li>
+		</ul>
+	
+		<ul id="sortable5" class="connectedSortable">
+			<input type="text" value="Column 1" class="category_name" />
+			<li class="ui-state-highlight">Item 1</li>
+			<li class="ui-state-highlight">Item 2</li>
+			<li class="ui-state-highlight">Item 3</li>
+			<li class="ui-state-highlight">Item 4</li>
+			<li class="ui-state-highlight">Item 5</li>
+			<li class="ui-state-highlight">Item 6</li>
+			<li class="ui-state-highlight">Item 7</li>
+			<li class="ui-state-highlight">Item 8</li>
+		</ul>
+		
+		<ul id="sortable6" class="connectedSortable">
+			<input type="text" value="Column 1" class="category_name" />
+			<li class="ui-state-highlight">Item 1</li>
+			<li class="ui-state-highlight">Item 2</li>
+			<li class="ui-state-highlight">Item 3</li>
+			<li class="ui-state-highlight">Item 4</li>
+			<li class="ui-state-highlight">Item 5</li>
+			<li class="ui-state-highlight">Item 6</li>
+			<li class="ui-state-highlight">Item 7</li>
+			<li class="ui-state-highlight">Item 8</li>
+		</ul>
+	
+</td>
+</tr></table>	
+	
+</div>
+	
+<h3>CardSort</h3>
+
+<div class="demo-description">
+<p>
+	Sort items from one list into another and vice versa, by passing a selector into
+	the <code>connectWith</code> option. The simplest way to do this is to
+	group all related lists with a CSS class, and then pass that class into the
+	sortable function (i.e., <code>connectWith: '.myclass'</code>).
+</p>
+</div><!-- End demo-description -->
+
+</body>
+
+</html>
