@@ -1,7 +1,5 @@
 <html>
-	
 <head>
-
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>	
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" type="text/css" media="all" /> 	
 	<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" /> 
@@ -41,22 +39,45 @@
 		margin-left: 3px;
 	}
 
+	#placeholder {
+		height: 200px;
+		border: 1px #ddd dashed;
+	}
+
 	</style>
 	
-	<script>
-	$(function() {
+	<script type="text/javascript">
+	
+	function bindSortable() {
 		$(".connectedSortable").sortable({
 			items: "li:not(.category_name)",
-			connectWith: ".connectedSortable"
+			connectWith: ".connectedSortable",
+			start: function( event, ui ) {
+				$("#placeholder").show();
+			},
+			receive: function( event, ui ) {
+				if($(event.target).attr("id") != "placeholder") {
+					$("#placeholder").hide();
+				}
+			}
 		}); //.disableSelection();
+	}
 
+	function bindDroppable() {
 		$("#droppable").droppable({
 			activeClass: "hover",
+			over: function( event, ui ) {
+				// If the placeholder object is already there, don't add it again
+			},
 			drop: function( event, ui ) {
 				
 			}
 		});
-		
+	}
+	
+	$(function() {
+		bindSortable();
+		bindDroppable();
 	});
 	</script>
 </head>
@@ -143,7 +164,11 @@
 			<li class="ui-state-highlight">Item 7</li>
 			<li class="ui-state-highlight">Item 8</li>
 		</ul>
-	
+		
+		<ul class="connectedSortable" id="placeholder" style="display: none;">
+			<li class="category_name"><input type="text" value="New Category" readonly="readonly" /></li>
+		</ul>
+
 </td>
 </tr></table>	
 	
